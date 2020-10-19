@@ -6,6 +6,7 @@ import bi.springframework.spring5webapp.domain.Publisher;
 import bi.springframework.spring5webapp.repository.AuthorRepository;
 import bi.springframework.spring5webapp.repository.BookRepository;
 import bi.springframework.spring5webapp.repository.PublisherRepository;
+import ch.qos.logback.core.net.SyslogOutputStream;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -43,6 +44,7 @@ public class BootStrapData implements CommandLineRunner {
         rod.getBooks().add(noEJB);
         noEJB.getAuthors().add(rod);
 
+
         authorRepository.save(rod);
         bookRepository.save(noEJB);
 
@@ -53,11 +55,18 @@ public class BootStrapData implements CommandLineRunner {
         fantasy.setState("NRW");
         fantasy.setZip("47799");
         publisherRepository.save(fantasy);
+        ddd.setPublisher(fantasy);
+        fantasy.getBooks().add(ddd);
+        publisherRepository.save(fantasy);
+
+        noEJB.setPublisher(fantasy);
+        fantasy.getBooks().add(noEJB);
+        publisherRepository.save(fantasy);
 
         System.out.println("Started in Bootstrap");
         System.out.println("Number of books: " + bookRepository.count());
         System.out.println("Number of authors: " + authorRepository.count());
         System.out.println("Number of publishers: " + publisherRepository.count());
-
+        System.out.println("Publisher number of books: " + fantasy.getBooks().size());
     }
 }
