@@ -6,7 +6,6 @@ import bi.springframework.spring5webapp.domain.Publisher;
 import bi.springframework.spring5webapp.repository.AuthorRepository;
 import bi.springframework.spring5webapp.repository.BookRepository;
 import bi.springframework.spring5webapp.repository.PublisherRepository;
-import ch.qos.logback.core.net.SyslogOutputStream;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
