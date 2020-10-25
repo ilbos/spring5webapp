@@ -13,10 +13,10 @@
         <th>Title</th>
         <th>Publisher</th>
     </tr>
-    <tr>
-        <th>123</th>
-        <th>Great Title</th>
-        <th>New Publisher</th>
+    <tr th:each="book : ${books}">
+        <th th:text="${book.id}">123</th>
+        <th th:text="${book.title}">Great Title</th>
+        <th th:text="${book.publisher.name}">New Publisher</th>
     </tr>
 </table>
 
