@@ -24,4 +24,6 @@ hs_err_pid*
 /target/classes/application.properties
 /.idea/workspace.xml
 
+# intelliJ
 *.idea
+*.iml
